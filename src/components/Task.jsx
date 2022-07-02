@@ -3,13 +3,17 @@ import { FaEye } from "react-icons/fa";
 
 const Task = ({ task, onRemove, onReminder }) => {
   return (
-    <div className="task" onDoubleClick={() => onReminder(task.id)}>
+    <div
+      className={`task ${task.reminder ? "reminder" : ""}`}
+      onDoubleClick={() => onReminder(task.id)}
+    >
       <FaEye style={showButton} />
       <h3>
         {task.text}{" "}
         <FaTimes style={deleteButton} onClick={() => onRemove(task.id)} />
       </h3>
-      <p>{task.day}</p>
+      <p>{task.date}</p>
+      <p>{task.time}</p>
     </div>
   );
 };
