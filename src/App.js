@@ -1,33 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 import AddTask from "./components/AddTask";
 
 const App = () => {
   const [addTaskModal, setAddTaskModal] = useState(false);
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      text: "Car Service",
-      date: "30-06-2022",
-      time: "13:00",
-      reminder: true,
-    },
-    {
-      id: 2,
-      text: "Dentis appointmen",
-      date: "25-06-2022",
-      time: "09:00",
-      reminder: false,
-    },
-    {
-      id: 3,
-      text: "Wash the car",
-      date: "29-06-2022",
-      time: "17:00",
-      reminder: true,
-    },
-  ]);
+  const [tasks, setTasks] = useState([]);
+
+  const tasksData = "http://localhost:5000/tasks";
+
+  useEffect(() => {
+    const getTasks = async () => {
+      const tasksFromServer = await fetchTasks();
+      setTasks(tasksFromServer);
+    };
+    getTasks();
+  }, []);
+
+  // getting tasks from server
+  const fetchTasks = async () => {
+    const response = await fetch(tasksData);
+    const data = await response.json();
+
+    return data;
+  };
 
   // Add new task
   const addTask = (task) => {

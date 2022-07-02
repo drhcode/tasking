@@ -1,0 +1,25 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Car Service",
+      "date": "30-06-2022",
+      "time": "13:00",
+      "reminder": true
+    },
+    {
+      "id": 2,
+      "text": "Dentis appointmen",
+      "date": "25-06-2022",
+      "time": "09:00",
+      "reminder": false
+    },
+    {
+      "id": 3,
+      "text": "Wash the car",
+      "date": "29-06-2022",
+      "time": "17:00",
+      "reminder": true
+    }
+  ]
+}
