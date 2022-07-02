@@ -8,17 +8,10 @@
       "reminder": true
     },
     {
-      "id": 2,
-      "text": "Dentis appointmen",
-      "date": "25-06-2022",
-      "time": "09:00",
-      "reminder": false
-    },
-    {
       "id": 3,
-      "text": "Wash the car",
-      "date": "29-06-2022",
-      "time": "17:00",
+      "text": "Going to MARRY :(",
+      "date": "29-10-2022",
+      "time": "20:00",
       "reminder": true
     }
   ]
